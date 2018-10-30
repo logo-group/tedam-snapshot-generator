@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-select.css">
+    <link rel="stylesheet" href="css/jasny-bootstrap.min.css">
+    <script src="js/Others/jquery-3.2.0.min.js"></script>
+    <script src="js/Others/bootstrap.min.js"></script>
+    <script src="js/Others/bootstrap-select.js"></script>
+    <script src="js/Others/jasny-bootstrap.min.js"></script>
+</head>
+
+<body style="width:500px">
+<div class="tabbable">
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#Main">Main</a></li>
+        <li><a data-toggle="tab" href="#Settings">Settings</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="Main" class="tab-pane fade in active">
+            <div class="input-group">
+                <input type="text" id="inputSnapshotFileName" class="form-control"
+                       placeholder="Filename for the snapshot...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" id="saveContent" type="button">Save Content to a File</button>
+                    </span>
+            </div>
+        </div>
+        <div id="Settings" class="tab-pane fade">
+            <div class="panel panel-default" style="margin:10px">
+                <div class="panel-heading">Config Dosyası Ayarları</div>
+                <div class="panel-body">
+                    <h6>It is used for uploading config file or downloading uploaded config file</h6>
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <span class="btn btn-default btn-file">
+                                    <span>Upload config file</span>
+                            <input id="ConfigFileChooser" type="file"/>
+                            </span>
+                        <button class="btn btn-primary" id="exportConfigFile" type="button">Export config file</button>
+                        <span class="fileinput-filename"></span>
+                        <span id="ConfigFileName" class="fileinput-new">No config file uploaded</span>
+                    </div>
+                    <h6>It is used for creating new config file or editing uploaded config file</h6>
+                    <div>
+                        <button type="button" class="btn btn-default" id="createConfigFile">Create Config File</button>
+                        <button type="button" class="btn btn-primary" id="editConfigFile">Edit Uploaded Config File
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/ConstantsEnums.js"></script>
+<script src="js/ObjectFromXml.js"></script>
+<script src="js/HtmlPageParse.js"></script>
+<script src="js/ParseHtmlSource.js"></script>
+<script src="js/MainView.js"></script>
+</body>
+
+</html>

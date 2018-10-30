@@ -1,0 +1,33 @@
+{
+  "name": "TEDAM AddOn",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Taking Snapshot with html parsing",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "MainView.html",
+    "default_title": "Click here to take a snapshot!"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "/js/content.js",
+        "/js/ParseHtmlSource.js",
+        "/js/ConstantsEnums.js",
+        "/js/ObjectFromXml.js",
+        "/js/HtmlPageParse.js",
+        "js/Others/jquery-3.2.0.min.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "<all_urls>",
+    "storage"
+  ]
+}
