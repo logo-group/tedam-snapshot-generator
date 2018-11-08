@@ -125,9 +125,13 @@ Let's define a rule for the search field at "https://www.amazon.com.tr/". It is 
 <img width="494" alt="snapshot13" src="https://user-images.githubusercontent.com/44693634/48179771-c7cfff00-e331-11e8-9c7b-76467275d260.png">
 
 
-
-
 The source code of the field related to Inspect will be accessed.
+
+Related code block:
+
+
+<input type="text" id="twotabsearchtextbox" value="" name="field-keywords" autocomplete="off" placeholder="" class="nav-input" dir="auto" tabindex="6">   
+
 
 
 
