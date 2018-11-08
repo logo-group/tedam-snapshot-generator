@@ -49,7 +49,7 @@ Go to the Define Tag step with the Next button.
 
 <img width="441" alt="snapshot6" src="https://user-images.githubusercontent.com/44693634/48133386-a7f3f900-e2a7-11e8-849a-328ca61f94fa.png">
 
-#### Define Tags
+#### Define Tag
 
 In this section unique identifier is defined.  Query selector provides to reach html element which has no id attribute by searching its parent element.
 
@@ -64,7 +64,7 @@ Because of the select element has not id, query selector search id its parent el
 
 The Extract Parameter Panel opens by clicking Add Extract button. This panel is filled according to the id properties that we will define.
 
-Extract Type: to determine whether id is a string or a boolean value.
+Extract Type: to determine whether id is a **string** or a **boolean** value.
 
 Node type: In this field, the selection of URL, InnerText, Value, XPath or Attribute is selected.
 
@@ -73,9 +73,7 @@ Node type: In this field, the selection of URL, InnerText, Value, XPath or Attri
 
 #### Define Title
 
-Sometimes the id input field does not contain a value that the user understands, for example, the name field is a value that the user will understand.
-
-At such times, the Define title fields should be filled values which users can remember easily.
+Sometimes the id input field does not contain a value that the user understands, for example, the name field is a value that the user will understand. At such times, the Define title fields should be filled values which users can remember easily.
 
 The fields on the Define Tag tab have the same properties as the Define Title fields.
 
@@ -86,7 +84,7 @@ The fields on the Define Tag tab have the same properties as the Define Title fi
 
 Define Value is the tab to reach fillable fields values such as textbox elements.
 
-In steps such as click, read, and not written values, this step remains Disable.
+In steps such as **click**, **read** and not written values, this step remains Disable.
 
 When the value is written in the text area field and the snapshot is taken, the entered value is displayed in the xml file.
 
@@ -129,8 +127,110 @@ The source code of the field related to Inspect will be accessed.
 
 Related code block:
 
+    <input type="text" id="twotabsearchtextbox" value="" name="field-keywords" autocomplete="off" placeholder="" class="nav-input" dir="auto" tabindex="6">   
 
-<input type="text" id="twotabsearchtextbox" value="" name="field-keywords" autocomplete="off" placeholder="" class="nav-input" dir="auto" tabindex="6">   
+
+Click the Snapshot icon. Click Create Config File under the Settings tab to create the Config file.
+
+**-Create Config File**
+
+Click "Create Config File" button to create the config file for  "https://www.amazon.com.tr/".
+
+ 1. In the FormName field, type "TedamAddOnConfAmazon".
+ 2. Add Rule button to start defining rules.
+ 3. Rule Type is selected as Write because it is a writable field.
+ 4. Define rule by clicking ‘Define’ button.
+ 
+ <img width="578" alt="snapshot14" src="https://user-images.githubusercontent.com/44693634/48180451-9573d100-e334-11e8-9b74-9c3e956697f1.png">
+
+**-Define Finds**
+
+HTML Line:
+
+    <input type="text" id="twotabsearchtextbox" value=""  name="field-keywords" autocomplete="off" placeholder=""  class="nav-input" dir="auto" tabindex="6">
+    
+Objects that we are trying to find are input elements which has “type=”text” attribute.
+
+ 1. "Finds Type" is selected as Element because the field to be defined is selected from the HTML elements. 
+ 2. In the "Finds Type Value" field, the type of element we are looking for is written as "input". 
+ 3. Click the Add Find button.
+ 4. Node Type "Attribute" is selected because the attribute field will be checked within the HTML line.
+ 5. Type "type" in the Node Type Value field.
+ 6. Operator Type equals is selected because type = "text".
+ 7. In the Find Parameter field, "text" is written.
+
+Click the Next button.
+
+<img width="444" alt="snapshot15" src="https://user-images.githubusercontent.com/44693634/48180659-935e4200-e335-11e8-9f70-6aeca721cf1a.png">
+
+**-Define Tag** 
+
+HTML Line:
+
+    <input type="text" id="twotabsearchtextbox" value=""  name="field-keywords" autocomplete="off" placeholder=""  class="nav-input" dir="auto" tabindex="6">
+    
+Id is the identification step.   
+
+ 1. Click the Add Extract button in the Define Tag tab. 
+ 2. Extract Type "String" is selected because the value "id" in the Query to be written in this field is a string expression.
+ 3. The Node Type is selected as "Attiribute"  , because the id field in the HTML line is Attiribute.
+ 4. In the Node Type Value field, type "id".
+
+Click the Next button.
+
+<img width="443" alt="snapshot16" src="https://user-images.githubusercontent.com/44693634/48180854-534b8f00-e336-11e8-92bb-ac39abbc4da3.png">
+
+**-Define Title** 
+
+HTML Line:
+
+    <input type="text" id="twotabsearchtextbox" value=""  name="field-keywords" autocomplete="off" placeholder=""  class="nav-input" dir="auto" tabindex="6">
+    
+ 1. Click the Add Extract button. 
+ 2. In Query to be written in this field, String is selected because "name" is a string expression.
+ 3. The Node Type is selected as "Attiribute" because the name field in the HTML line is Attiribute.
+ 4. The name of the Node Type Value field is "name". 
+
+Click the Next button.
+
+<img width="445" alt="snapshot17" src="https://user-images.githubusercontent.com/44693634/48181147-6874ed80-e337-11e8-834c-70a1ae39d073.png">
+
+
+**-Define Value** 
+
+ 1. Enabled.
+ 2. Click the Add Extract button. 
+ 3. Because the value "value" is a string expression in the Query to be written in this field, Extract Type String is selected. 
+ 4. Node Type is selected as Value.
+
+Click the Next button.
+
+"https://www.amazon.com.tr/" in the Search field "book" and snapshot is taken in the downloaded xml file value is "book" appears.
+
+<img width="442" alt="snapshot18" src="https://user-images.githubusercontent.com/44693634/48181287-ef29ca80-e337-11e8-9752-eede8ada9608.png">
+
+**-Define Enabled** 
+
+ 1. On the Define Enabled tab, click the Add Extract button.
+ 2. Extract Type Boolean is selected.
+ 3. The value field is "true". 
+ 4. Click Finish button. 
+
+<img width="443" alt="snapshot19" src="https://user-images.githubusercontent.com/44693634/48181402-58114280-e338-11e8-9a06-3e69c4eb0842.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
