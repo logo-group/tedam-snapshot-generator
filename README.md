@@ -121,7 +121,21 @@ This is the part of taking snapshot according to defined rules. Enter snapshot f
 
 Let's define a rule for the search field at "https://www.amazon.com.tr/". It is the text field, so we need to define a “Write” type rule. First, click on the search field and right click to select Inspect.
 
+
+<img width="494" alt="snapshot13" src="https://user-images.githubusercontent.com/44693634/48179771-c7cfff00-e331-11e8-9c7b-76467275d260.png">
+
+
+
+
 The source code of the field related to Inspect will be accessed.
+
+
+
+
+
+
+
+
 
 
 
