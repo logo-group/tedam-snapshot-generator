@@ -64,7 +64,7 @@ Because of the select element has not id, query selector search id its parent el
 
 The Extract Parameter Panel opens by clicking Add Extract button. This panel is filled according to the id properties that we will define.
 
-Extract Type: to determine whether id is a **string** or a **boolean** value.
+Extract Type: To determine whether id is a **string** or a **boolean** value.
 
 Node type: In this field, the selection of URL, InnerText, Value, XPath or Attribute is selected.
 
