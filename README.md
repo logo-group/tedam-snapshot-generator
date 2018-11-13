@@ -19,7 +19,7 @@ Snapshot-Generator is a Chrome plug-in that allows you to take screenshots for a
 
 # Taking Snapshot
 
-Enter snapshot file name and click ‘Save Content to a File’ to download xml file. The snapshot output is saved at XML file type, depending on the rules written.
+Click snapshot icon in the upper right area of our browser screen. Enter snapshot file name and click ‘Save Content to a File’ to download xml file. The snapshot output is saved at XML file type, depending on the rules written.
 
 <img width="250" alt="snapshot12" src="https://user-images.githubusercontent.com/44693634/48134463-0ff80e80-e2ab-11e8-9d71-7c61bc0951bb.png">
 
