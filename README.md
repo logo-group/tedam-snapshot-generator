@@ -6,7 +6,9 @@ Snapshot-Generator is a Chrome plug-in that allows you to take screenshots for a
 # Snapshot
 Snapshot is an XML document that contains information about components that the user can interact with on the application. 
 
-![snapshot jgu](https://user-images.githubusercontent.com/44693634/48410933-22fa5b00-e751-11e8-9874-eb0bde4da8c7.png)
+    <Control enabled="true" mandatory="false" tag="1000003" title="Numara" type="101" value=""/>
+    <Control enabled="false" mandatory="false" tag="100002" title="Numara" type="102" value="Logo Software"/>
+    <Control enabled="true" mandatory="false" tag="1000004" title="No" type="103" value=""/>
 
 **Enabled**:<br>
 **Mandatory**:<br>
