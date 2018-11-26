@@ -1,5 +1,5 @@
 # Snapshot-Generator
-Snapshot-Generator is a Chrome plug-in that allows you to take screenshots for automation with Tedamface in web products. With the rules set in Snapshot-Generator, xml file of the elements on the web page is created. This xml file is uploaded to Tedamface and used in the preparation of the related scenario. We have a Snapshot icon in the upper right area of our browser screen as Chrome plugin. 
+Snapshot-Generator is a Chrome plug-in that allows you to take screenshots for automation with Tedam Face in web products. With the rules set in Snapshot-Generator, xml file of the elements on the web page is created. This xml file is uploaded to Tedamface and used in the preparation of the related scenario. We have a Snapshot icon in the upper right area of our browser screen as Chrome plugin. 
 
 <img width="207" alt="snapshot1" src="https://user-images.githubusercontent.com/44693634/48130515-0025fd80-e29e-11e8-8d39-86d51c59e2b2.png">
 
