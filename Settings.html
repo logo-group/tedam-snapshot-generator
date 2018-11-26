@@ -16,15 +16,21 @@
     <script src="js/Others/jquery.fix.clone.js"></script>
 </head>
 
+
+<select id="mySelect">
+    <option value="en" id="en">English</option>
+    <option value="tr" id="tr">Türkçe</option>
+  </select>
+
 <body class="container">
 <div class="page-header">
-    <h1>Settings</h1>
+    <h1 key="settings">Settings</h1>
 </div>
 <div id="loader"></div>
 <div id="Settings" class="animate-bottom">
     <div>
         <div class="form-inline">
-            <button type="button" id="addRule" class="btn btn-default">Add Rule</button>
+            <button type="button" id="addRule" class="btn btn-default" key="addRule">Add Rule</button>
         </div>
         <div>
             <div id="ruleFormNameContent"></div>
@@ -33,22 +39,22 @@
         </div>
         <div class="form-inline">
             <div class="input-group col-md-6">
-                <input type="text" id="inputConfigFileName" class="form-control"
+                <input type="text" id="inputConfigFileName" class="form-control" placeholderkey="configFileName"
                        placeholder="Filename for the Config File...">
             </div>
             <div class="input-group">
-                <button class="btn btn-danger" id="cancelButton" type="button">Cancel</button>
-                <button class="btn btn-default" id="exportConfigFile" type="button">Export config file</button>
-                <button class="btn btn-primary" id="updateConfigFile" type="button">Update config file</button>
+                <button class="btn btn-danger" id="cancelButton" type="button" key="cancel">Cancel</button>
+                <button class="btn btn-default" id="exportConfigFile" type="button" key="exportConfigFile">Export config file</button>
+                <button class="btn btn-primary" id="updateConfigFile" type="button"key="updateConfigFile">Update config file</button>
             </div>
         </div>
     </div>
     <div id="defineRuleModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
          aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div Sclass="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3>Define Rule</h3>
+                    <h3 key="defineRule" >Define Rule</h3>
                     <span id="ruleOrder" hidden></span>
                     <span id="ruleType"></span>
                     <span id="ruleName"></span>
@@ -56,22 +62,22 @@
                 <div class="modal-body" id="myWizard">
                     <div class="progress">
                         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1"
-                             aria-valuemin="1" aria-valuemax="5" style="width: 20%;">
+                             aria-valuemin="1" aria-valuemax="5" style="width: 20%;" key="step1of5">
                             Step 1 of 5
                         </div>
                     </div>
                     <div class="navbar">
                         <div class="navbar-inner">
                             <ul class="nav nav-pills">
-                                <li class="active"><a href="#step1" id="linkStep1" data-toggle="tab" data-step="1">Step
+                                <li class="active"><a href="#step1" id="linkStep1" data-toggle="tab" data-step="1" key="step1">Step
                                     1 : Define Finds</a></li>
-                                <li><a href="#step2" id="linkStep2" data-toggle="tab" data-step="2">Step 2 : Define
+                                <li><a href="#step2" id="linkStep2" data-toggle="tab" data-step="2" key="step2">Step 2 : Define
                                     Tag</a></li>
-                                <li><a href="#step3" id="linkStep3" data-toggle="tab" data-step="3">Step 3 : Define
+                                <li><a href="#step3" id="linkStep3" data-toggle="tab" data-step="3" key="step3">Step 3 : Define
                                     Title</a></li>
-                                <li><a href="#step4" id="linkStep4" data-toggle="tab" data-step="4">Step 4 : Define
+                                <li><a href="#step4" id="linkStep4" data-toggle="tab" data-step="4" key="step4">Step 4 : Define
                                     Value</a></li>
-                                <li><a href="#step5" id="linkStep5" data-toggle="tab" data-step="5">Step 5 : Define
+                                <li><a href="#step5" id="linkStep5" data-toggle="tab" data-step="5" key="step5">Step 5 : Define
                                     Enabled</a></li>
                             </ul>
                         </div>
@@ -80,7 +86,7 @@
                         <div class="tab-pane fade in active" id="step1">
                             <nav class="navbar navbar-default">
                                 <div class="form-inline findsContent">
-                                    <label for="findsType">Finds Type</label>
+                                    <label for="findsType" key="findsType">Finds Type</label>
                                     <select id="findsType" class="selectpicker" title="Finds Type">
                                     </select>
                                     <div class="form-group" id="findsTypeValueContent"></div>
@@ -88,7 +94,7 @@
                                             data-toggle="popover" data-placement="top" data-trigger="hover"
                                             id="findsTypeHelp"><span class="glyphicon glyphicon-question-sign"></span>
                                     </button>
-                                    <button type="button" id="addFind" class="btn btn-info" disabled="disabled">Add
+                                    <button type="button" id="addFind" class="btn btn-info" disabled="disabled" key="addFind">Add
                                         Find
                                     </button>
                                 </div>
@@ -98,9 +104,9 @@
                         <div class="tab-pane fade" id="step2">
                             <nav class="navbar navbar-default">
                                 <div class="extractContent">
-                                    <label for="querySelectorTag">Query Selector</label>
+                                    <label for="querySelectorTag" key="querySelector">Query Selector</label>
                                     <input type="text" id="querySelectorTag" class="form extractQuery">
-                                    <button type="button" id="addExtractTag" class="btn btn-info">Add Extract</button>
+                                    <button type="button" id="addExtractTag" class="btn btn-info" key="addExtract1">Add Extract</button>
                                 </div>
                             </nav>
                             <div class="stepContent" id="tagContent"></div>
@@ -108,9 +114,9 @@
                         <div class="tab-pane fade" id="step3">
                             <nav class="navbar navbar-default">
                                 <div class="extractContent">
-                                    <label for="querySelectorTitle">Query Selector</label>
+                                    <label for="querySelectorTitle"  key="querySelector1" >Query Selector</label>
                                     <input type="text" id="querySelectorTitle" class="form extractQuery">
-                                    <button type="button" id="addExtractTitle" class="btn btn-info">Add Extract</button>
+                                    <button type="button" id="addExtractTitle" class="btn btn-info" key="addExtract2">Add Extract</button>
                                 </div>
                             </nav>
                             <div class="stepContent" id="titleContent"></div>
@@ -118,7 +124,7 @@
                         <div class="tab-pane fade" id="step4">
                             <nav class="navbar navbar-default">
                                 <div class="extractContent">
-                                    <label for="querySelectorValue">Query Selector</label>
+                                    <label for="querySelectorValue" key="querySelector2">Query Selector</label>
                                     <input type="text" id="querySelectorValue" class="form extractQuery">
                                     <input type="checkbox" id="hasEnabled" data-toggle="toggle" data-on="Enabled"
                                            data-off="Disabled" data-width="100">
@@ -132,9 +138,9 @@
                         <div class="tab-pane fade" id="step5">
                             <nav class="navbar navbar-default">
                                 <div class="extractContent">
-                                    <label for="querySelectorEnabled">Query Selector</label>
+                                    <label for="querySelectorEnabled" key="querySelector2" >Query Selector</label>
                                     <input type="text" id="querySelectorEnabled" class="form extractQuery">
-                                    <button type="button" id="addExtractEnabled" class="btn btn-info">Add Extract
+                                    <button type="button" id="addExtractEnabled" class="btn btn-info" key="addExtract">Add Extract
                                     </button>
                                 </div>
                             </nav>
@@ -143,16 +149,18 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" id="cancel">Cancel</button>
-                    <button type="button" class="btn btn-primary" id="previous" disabled="disabled">Previous</button>
-                    <button type="button" class="btn btn-primary" id="next">Next</button>
-                    <button type="button" class="btn btn-success" id="finish" disabled="disabled">Finish</button>
+                    <button type="button" class="btn btn-danger" id="cancel" key="cancel1" >Cancel</button>
+                    <button type="button" class="btn btn-primary" id="previous" disabled="disabled" key="previous" >Previous</button>
+                    <button type="button" class="btn btn-primary" id="next" key="next">Next</button>
+                    <button type="button" class="btn btn-success" id="finish" disabled="disabled" key="finish" >Finish</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 <script src="js/ConstantsEnums.js"></script>
+<script src='js/language.js'></script>
 <script src="js/ObjectFromXml.js"></script>
 <script src="js/HtmlPageParse.js"></script>
 <script src="js/ParseHtmlSource.js"></script>
@@ -161,6 +169,6 @@
 <script src='js/SettingsModalPageEvents.js'></script>
 <script src='js/SettingsModalComponents.js'></script>
 <script src='js/Settings.js'></script>
-
+<script src="js/deneme.js"></script>
 
 </html>

@@ -46,7 +46,6 @@ function saveTextMessageAsFile(fileName, text) {
         downloadLink.style.display = "none";
         document.body.appendChild(downloadLink);
     }
-
     downloadLink.click();
 }
 

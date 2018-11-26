@@ -36,9 +36,13 @@ function addFindParameterCombo(documentContent, find) {
     inputParameter.className = "form-control parameter";
     inputParameter.setAttribute("type", "text");
 
+
+    var lang = $('option:selected', '#mySelect').attr('id');
     var label = document.createElement("label");
     label.className = "input-group-addon"
     label.innerHTML = "Find Parameter";
+    label.setAttribute("key", "findparameter");
+    label.innerHTML = arrLang[lang]["findparameter"];
 
     var inputDiv = document.createElement("div");
     inputDiv.className = "input-group col-md-11";
@@ -54,6 +58,9 @@ function addFindParameterCombo(documentContent, find) {
     removeButton.setAttribute("type", "button");
     removeButton.className = "btn btn-danger";
     removeButton.innerHTML = "Remove";
+    removeButton.setAttribute("key", "remove");
+    removeButton.innerHTML = arrLang[lang]["remove"];
+
 
     var buttonDiv = document.createElement("div");
     buttonDiv.setAttribute("style", "float:right")
@@ -61,6 +68,9 @@ function addFindParameterCombo(documentContent, find) {
 
     var labelHeader = document.createElement("label");
     labelHeader.innerHTML = "Find Parameter Panel"
+    labelHeader.setAttribute("key", "findparameterpanel");
+    labelHeader.innerHTML = arrLang[lang]["findparameterpanel"];
+
 
     var labelDiv = document.createElement("div");
     labelDiv.setAttribute("style", "float:left")
@@ -100,10 +110,13 @@ function addTargetParameterCombo(documentContent, extract) {
     var mainDiv = document.createElement("form");
     mainDiv.className = "well extract";
 
+    var lang = $('option:selected', '#mySelect').attr('id');
     var addQueryButton = document.createElement("button");
     addQueryButton.setAttribute("type", "button");
     addQueryButton.className = "btn btn-info";
     addQueryButton.innerHTML = "Add Query";
+    addQueryButton.setAttribute("key", "addquery");
+    addQueryButton.innerHTML = arrLang[lang]["addquery"];
     addQueryButton.setAttribute("style", "margin-left:1%;margin-top:1%");
     addQueryButton.setAttribute("disabled", "disabled");
     addQueryButton.onclick = function () {
@@ -142,6 +155,8 @@ function addTargetParameterCombo(documentContent, extract) {
     removeButton.setAttribute("type", "button");
     removeButton.className = "btn btn-danger";
     removeButton.innerHTML = "Remove";
+    removeButton.setAttribute("key", "remove2");
+    removeButton.innerHTML = arrLang[lang]["remove2"];
 
     var buttonDiv = document.createElement("div");
     buttonDiv.setAttribute("style", "float:right")
@@ -149,6 +164,8 @@ function addTargetParameterCombo(documentContent, extract) {
 
     var labelHeader = document.createElement("label");
     labelHeader.innerHTML = "Extract Parameter Panel"
+    labelHeader.setAttribute("key", "extractparameterpanel");
+    labelHeader.innerHTML = arrLang[lang]["extractparameterpanel"];
 
     var labelDiv = document.createElement("div");
     labelDiv.setAttribute("style", "float:left")
@@ -247,6 +264,8 @@ function createHelpTooltip(content) {
 
 // node icin gerekli olan div dinamik olarak olusturulur.
 function createNode(node) {
+    var lang = $('option:selected', '#mySelect').attr('id');
+
     var div = document.createElement("div");
     div.className = "form-inline nodeDiv";
     div.setAttribute("style", "clear:both");
@@ -255,7 +274,7 @@ function createNode(node) {
     var selectNodeType = document.createElement("select");
     selectNodeType.className = "selectpicker nodeType";
     // selectNodeType.setAttribute("data-width", "auto")
-    selectNodeType.setAttribute("title", "Node Type");
+    selectNodeType.setAttribute("title", arrLang[lang]["nodeType"]);
     for (var i = 0; i < nodeTypeArray.length; i++) {
         var option = document.createElement("option");
         option.value = nodeTypeArray[i];
@@ -274,8 +293,9 @@ function createNode(node) {
     });
 
     var label1 = document.createElement("label");
-    label1.className = "input-group-addon"
-    label1.innerHTML = "Node Type";
+    label1.className = "input-group-addon";
+    label1.setAttribute("key", "nodeType");
+    label1.innerHTML = arrLang[lang]["nodeType"];
 
     var selectDiv = document.createElement("div");
     selectDiv.className = "input-group col-md-11";
@@ -288,7 +308,8 @@ function createNode(node) {
 
     var label2 = document.createElement("label");
     label2.className = "input-group-addon"
-    label2.innerHTML = "Node Type Value";
+    label2.setAttribute("key", "nodeTypeValue");
+    label2.innerHTML = arrLang[lang]["nodeTypeValue"];
 
     var inputDiv = document.createElement("div");
     inputDiv.className = "input-group col-md-11";
@@ -318,10 +339,15 @@ function createQuery(query) {
     var mainDiv = document.createElement("form");
     mainDiv.className = "well form-inline query";
 
+
     var removeButton = document.createElement("button");
     removeButton.setAttribute("type", "button");
     removeButton.className = "btn btn-danger";
+    var lang = $('option:selected', '#mySelect').attr('id');
     removeButton.innerHTML = "Remove";
+    removeButton.setAttribute("key", "remove1");
+    removeButton.innerHTML = arrLang[lang]["remove1"];
+
 
     var buttonDiv = document.createElement("div");
     buttonDiv.setAttribute("style", "float:right")
@@ -329,6 +355,9 @@ function createQuery(query) {
 
     var labelHeader = document.createElement("label");
     labelHeader.innerHTML = "Query Parameter Panel"
+    labelHeader.setAttribute("key", "queryparameterpanel");
+    labelHeader.innerHTML = arrLang[lang]["queryparameterpanel"];
+
 
     var labelDiv = document.createElement("div");
     labelDiv.setAttribute("style", "float:left")
@@ -341,6 +370,9 @@ function createQuery(query) {
     var label = document.createElement("label");
     label.className = "input-group-addon"
     label.innerHTML = "Query Parameter";
+    label.setAttribute("key", "queryparameter");
+    label.innerHTML = arrLang[lang]["queryparameter"];
+
 
     var inputDiv = document.createElement("div");
     inputDiv.className = "input-group col-md-11";
@@ -377,33 +409,39 @@ function createQuery(query) {
 function createOperatorType(operator) {
     var div = document.createElement("div");
     div.className = "form-inline operatorDiv"
+    var lang = $('option:selected', '#mySelect').attr('id');
 
     var operatorTypeArray = getEnumValuesAsArray(OPERATOR_TYPE);
     var selectOperatorType = document.createElement("select");
     selectOperatorType.className = "selectpicker operatorType";
     // selectOperatorType.setAttribute("data-width", "auto")
-    selectOperatorType.setAttribute("title", "Operator Type");
+    selectOperatorType.setAttribute("title", arrLang[lang]["operatortype"]);
     for (var i = 0; i < operatorTypeArray.length; i++) {
         var option = document.createElement("option");
         option.value = operatorTypeArray[i];
         option.text = operatorTypeArray[i];
         selectOperatorType.append(option);
     }
+
     var label1 = document.createElement("label");
     label1.className = "input-group-addon"
-    label1.innerHTML = "Operator Type";
+    label1.setAttribute("key", "operatortype");
+    label1.innerHTML = arrLang[lang]["operatortype"];
+    
 
     var selectDiv = document.createElement("div");
     selectDiv.className = "input-group col-md-11";
     selectDiv.appendChild(label1);
     selectDiv.appendChild(selectOperatorType);
-
+    
     var inputStartIndexOf = document.createElement("input")
     inputStartIndexOf.className = "form-control startIndexOf";
     inputStartIndexOf.setAttribute("type", "text");
     var label2 = document.createElement("label");
     label2.className = "input-group-addon"
-    label2.innerHTML = "Start Index";
+    label2.setAttribute("key", "startIndex");
+    label2.innerHTML = arrLang[lang]["startIndex"];
+
     var inputStartIndexOfDiv = document.createElement("div");
     inputStartIndexOfDiv.className = "input-group col-md-5";
     inputStartIndexOfDiv.appendChild(label2);
@@ -414,7 +452,8 @@ function createOperatorType(operator) {
     inputStartAdd.setAttribute("type", "text");
     var label3 = document.createElement("label");
     label3.className = "input-group-addon"
-    label3.innerHTML = "Start Add";
+    label3.setAttribute("key", "startadd");
+    label3.innerHTML = arrLang[lang]["startadd"];
     var inputStartAddDiv = document.createElement("div");
     inputStartAddDiv.className = "input-group col-md-5 col-sm-offset-1";
     inputStartAddDiv.appendChild(label3);
@@ -433,6 +472,8 @@ function createOperatorType(operator) {
     var label4 = document.createElement("label");
     label4.className = "input-group-addon"
     label4.innerHTML = "End Index";
+    label4.setAttribute("key", "endIndex");
+    label4.innerHTML = arrLang[lang]["endIndex"];    
     var inputEndIndexOfDiv = document.createElement("div");
     inputEndIndexOfDiv.className = "input-group col-md-5";
     inputEndIndexOfDiv.appendChild(label4);
@@ -444,6 +485,8 @@ function createOperatorType(operator) {
     var label5 = document.createElement("label");
     label5.className = "input-group-addon"
     label5.innerHTML = "End Add";
+    label5.setAttribute("key", "endAdd");
+    label5.innerHTML = arrLang[lang]["endAdd"];
     var inputEndAddDiv = document.createElement("div");
     inputEndAddDiv.className = "input-group col-md-5 col-sm-offset-1";
     inputEndAddDiv.appendChild(label5);
@@ -478,12 +521,16 @@ function createExtractValue(isExtractTypeBoolean, operator) {
     var div = document.createElement("div");
     div.className = "form-inline extractValueDiv"
 
+    
     var inputStartIndexOf = document.createElement("input")
     inputStartIndexOf.className = "form-control startIndexOf";
     inputStartIndexOf.setAttribute("type", "text");
     var label2 = document.createElement("label");
     label2.className = "input-group-addon"
+    var lang = $('option:selected', '#mySelect').attr('id');
     label2.innerHTML = "Start Index";
+    label2.setAttribute("key", "startindex");
+    label2.innerHTML = arrLang[lang]["startindex"];
     var inputStartIndexOfDiv = document.createElement("div");
     inputStartIndexOfDiv.className = "input-group col-md-5";
     inputStartIndexOfDiv.appendChild(label2);
@@ -495,6 +542,8 @@ function createExtractValue(isExtractTypeBoolean, operator) {
     var label3 = document.createElement("label");
     label3.className = "input-group-addon"
     label3.innerHTML = "Start Add";
+    label3.setAttribute("key", "startadd1");
+    label3.innerHTML = arrLang[lang]["startadd1"];
     var inputStartAddDiv = document.createElement("div");
     inputStartAddDiv.className = "input-group col-md-5 col-sm-offset-1";
     inputStartAddDiv.appendChild(label3);
@@ -513,6 +562,8 @@ function createExtractValue(isExtractTypeBoolean, operator) {
     var label4 = document.createElement("label");
     label4.className = "input-group-addon"
     label4.innerHTML = "End Index";
+    label4.setAttribute("key", "endIndex1");
+    label4.innerHTML = arrLang[lang]["endIndex1"];
     var inputEndIndexOfDiv = document.createElement("div");
     inputEndIndexOfDiv.className = "input-group col-md-5";
     inputEndIndexOfDiv.appendChild(label4);
@@ -524,6 +575,8 @@ function createExtractValue(isExtractTypeBoolean, operator) {
     var label5 = document.createElement("label");
     label5.className = "input-group-addon"
     label5.innerHTML = "End Add";
+    label5.setAttribute("key", "endAdd1");
+    label5.innerHTML = arrLang[lang]["endAdd1"];
     var inputEndAddDiv = document.createElement("div");
     inputEndAddDiv.className = "input-group col-md-5 col-sm-offset-1";
     inputEndAddDiv.appendChild(label5);
@@ -535,23 +588,30 @@ function createExtractValue(isExtractTypeBoolean, operator) {
     endDiv.appendChild(inputEndAddDiv);
     endDiv.appendChild(createHelpTooltip(endDivContent));
 
+    var lang = $('option:selected', '#mySelect').attr('id');
     var inputWrapper = document.createElement("input")
     inputWrapper.className = "form-control wrapper";
     inputWrapper.setAttribute("type", "text");
     var label6 = document.createElement("label");
     label6.className = "input-group-addon"
     label6.innerHTML = "Wrapper";
+    label6.setAttribute("key", "wrapper");
+    label6.innerHTML = arrLang[lang]["wrapper"];
     var inputWrapperDiv = document.createElement("div");
     inputWrapperDiv.className = "input-group col-md-11 wrapperDiv";
     inputWrapperDiv.appendChild(label6);
     inputWrapperDiv.appendChild(inputWrapper);
 
+    var lang = $('option:selected', '#mySelect').attr('id');
     var inputStartRegex = document.createElement("input")
     inputStartRegex.className = "form-control startRegex";
     inputStartRegex.setAttribute("type", "text");
     var label7 = document.createElement("label");
     label7.className = "input-group-addon"
     label7.innerHTML = "Start Regex";
+    label7.setAttribute("key", "startregex");
+    label7.innerHTML = arrLang[lang]["startregex"];
+
     var inputStartRegexDiv = document.createElement("div");
     inputStartRegexDiv.className = "input-group col-md-5";
     inputStartRegexDiv.appendChild(label7);
@@ -563,6 +623,8 @@ function createExtractValue(isExtractTypeBoolean, operator) {
     var label8 = document.createElement("label");
     label8.className = "input-group-addon"
     label8.innerHTML = "End Regex";
+    label8.setAttribute("key", "endRegex");
+    label8.innerHTML = arrLang[lang]["endRegex"];
     var inputEndRegexDiv = document.createElement("div");
     inputEndRegexDiv.className = "input-group col-md-5 col-sm-offset-1";
     inputEndRegexDiv.appendChild(label8);
@@ -581,6 +643,8 @@ function createExtractValue(isExtractTypeBoolean, operator) {
     var label7 = document.createElement("label");
     label7.className = "input-group-addon"
     label7.innerHTML = "Value";
+    label7.setAttribute("key", "value");
+    label7.innerHTML = arrLang[lang]["value"];
     var inputValueDiv = document.createElement("div");
     inputValueDiv.className = "input-group col-md-11 paramValueDiv";
     inputValueDiv.appendChild(label7);

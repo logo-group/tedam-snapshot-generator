@@ -152,15 +152,21 @@ function addRuleParameterCombo(documentContent, rule, isRemoved) {
     inputDiv.className = "input-group col-md-7"
     inputDiv.appendChild(input)
 
+    var lang = $('option:selected', '#mySelect').attr('id');
     var defineButton = document.createElement("button");
     defineButton.setAttribute("type", "button");
     defineButton.className = "btn btn-info defineButton";
     defineButton.innerHTML = "Define";
-
+    defineButton.setAttribute("key", "define");
+    defineButton.innerHTML = arrLang[lang]["define"];
+    
+    var lang = $('option:selected', '#mySelect').attr('id');
     var removeButton = document.createElement("button");
     removeButton.setAttribute("type", "button");
     removeButton.className = "btn btn-danger removeButton ";
     removeButton.innerHTML = "Remove";
+    removeButton.setAttribute("key", "remove3");
+    removeButton.innerHTML = arrLang[lang]["remove3"];
     if (isRemoved == false) {
         removeButton.setAttribute("disabled", "disabled");
     }
@@ -394,6 +400,7 @@ function editModalWithConfigFile() {
             configFileRuleList.ruleArray.map(function (rule) {
                 if (isEqual(rule.ruleType, RULE_TYPE.FORMNAME.name)) {
                     addRuleParameterCombo("ruleFormNameContent", rule, false);
+                    console.log(rule)
                     formNameRuleList.push(rule)
                     editModal(rule);
                 } else if (isEqual(rule.ruleType, RULE_TYPE.VERSION.name)) {
