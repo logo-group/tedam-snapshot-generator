@@ -42,7 +42,7 @@ document.getElementById("previous").addEventListener("click", function () {
 // step1'de previous butonu disable, next butonu enable, finish butonu disable ayarlanir.
 $("#linkStep1").click(function () {
     $("#previous").prop('disabled', true);
-    $("#next").prop('disabled', false);
+    $("#next").prop('disabled', true);
     $("#finish").prop('disabled', true);
 });
 
@@ -103,13 +103,27 @@ function appendFindsTypeValue(findsTypeValue) {
     var inputDiv = document.createElement("div");
     inputDiv.className = "findsTypeValueDiv"
 
+    var lang = $('option:selected', '#mySelect').attr('id');
     var label = document.createElement("label");
     label.innerHTML = "Finds Type Value"
+    label.setAttribute("key", "findstypevalue");
+    label.innerHTML = arrLang[lang]["findstypevalue"];
 
     var input = document.createElement("input");
     input.className = "form-control"
     input.setAttribute("type", "text");
     input.setAttribute("id", "findsTypeValue");
+
+    input.onchange = function () {
+        if(input.value.length > 2) {
+            document.getElementById("next").disabled = false;
+        }
+        else {
+        document.getElementById("next").disabled = true;
+        }
+    };
+
+
     if (findsTypeValue) {
         input.value = findsTypeValue;
     }
@@ -163,8 +177,10 @@ $("#addExtractEnabled").click(function () {
 
 // wizard da bulunan progress barin aktif olan step'e gore duzenlenmesini saglar.
 $(document).ready(function () {
+    var lang = $('option:selected', '#mySelect').attr('id');
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-
+        lang = $('option:selected', '#mySelect').attr('id');
+        
         //update progress
         var step = $(e.target).data('step');
         var percent = (parseInt(step) / 5) * 100;
@@ -172,7 +188,7 @@ $(document).ready(function () {
         $('.progress-bar').css({
             width: percent + '%'
         });
-        $('.progress-bar').text("Step " + step + " of 5");
+        $('.progress-bar').text(arrLang[lang]['step'] + " " + step + " / 5");
 
         //e.relatedTarget // previous tab
     })
